@@ -10633,6 +10633,17 @@ var cursor = {
             });
         });
 
+        document.querySelectorAll('.cursor_big').forEach(function(el) {
+            el.addEventListener('mouseover', function() {
+                self.cursorEnlarged = true;
+                self.toggleCursorOnImage();
+            });
+            el.addEventListener('mouseout', function() {
+                self.cursorEnlarged = false;
+                self.toggleCursorOnImage();
+            });
+        });
+
         // Click events
         document.addEventListener('mousedown', function() {
             self.cursorEnlarged = true;
@@ -10687,11 +10698,23 @@ var cursor = {
         var self = this;
 
         if (self.cursorEnlarged) {
-            self.$dot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            self.$dot.style.transform = 'translate(-50%, -50%) scale(2)';
             self.$outline.style.border = 'none';
         } else {
             self.$dot.style.transform = 'translate(-50%, -50%) scale(1)';
             self.$outline.style.border = 'solid 1px #FF0000';
+        }
+    },
+
+    toggleCursorOnImage: function() {
+        var self = this;
+
+        if (self.cursorEnlarged) {
+            self.$dot.style.height = '0px';
+            self.$outline.style.transform = 'translate(-50%, -50%) scale(2)';
+        } else {
+            self.$dot.style.height = '8px';
+            self.$outline.style.transform = 'translate(-50%, -50%) scale(1)';
         }
     },
 

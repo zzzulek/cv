@@ -88,37 +88,37 @@ body, html {
 
 		&::before,
 		&::after {
-			display: inline-block;
-			opacity: 0;
+			display:            inline-block;
+			opacity:            0;
 			-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
-			-moz-transition: -moz-transform 0.3s, opacity 0.2s;
-			transition: transform 0.3s, opacity 0.2s;
+			-moz-transition:    -moz-transform 0.3s, opacity 0.2s;
+			transition:         transform 0.3s, opacity 0.2s;
 		}
 
 		&::before {
-			margin-right: 10px;
-			content: '[';
+			margin-right:      10px;
+			content:           '[';
 			-webkit-transform: translateX(20px);
-			-moz-transform: translateX(20px);
-			transform: translateX(20px);
+			-moz-transform:    translateX(20px);
+			transform:         translateX(20px);
 		}
 
 		&::after {
-			margin-left: 10px;
-			content: ']';
+			margin-left:       10px;
+			content:           ']';
 			-webkit-transform: translateX(-20px);
-			-moz-transform: translateX(-20px);
-			transform: translateX(-20px);
+			-moz-transform:    translateX(-20px);
+			transform:         translateX(-20px);
 		}
 
 		&:hover::before,
 		&:hover::after,
 		&:focus::before,
 		&:focus::after {
-			opacity: 1;
+			opacity:           1;
 			-webkit-transform: translateX(0px);
-			-moz-transform: translateX(0px);
-			transform: translateX(0px);
+			-moz-transform:    translateX(0px);
+			transform:         translateX(0px);
 		}
 	}
 
@@ -146,23 +146,34 @@ body, html {
 	padding-top:     100px;
 
 	&__image{
-		display: block;
-		width: 450px;
-		height: 500px;
-		background-image: url("../img/photo_2019-08-05 16.22.25.jpeg");
-		-webkit-filter: grayscale(100%);
-		filter: grayscale(100%);
+		display:             block;
+		width:               450px;
+		height:              450px;
+		background-image:    url("../img/photo_2019-08-05 16.22.25.jpeg");
+		-webkit-filter:      grayscale(100%);
+		filter:              grayscale(100%);
 		background-repeat:   no-repeat;
 		background-size:     contain;
 		background-position: center;
+		margin-right:        -50px;
+
+		.cursor_big{
+			position:relative;
+			z-index: 10;
+		}
 	}
-	&__descr{
-		position: absolute;
-		font-weight: 600;
-		font-size:64px;
-		line-height: 80px;
-		width: 800px;
-		padding-left: 350px;
+	&__descr {
+		position: relative;
+		top:      -100px;
+		pointer-events: none;
+		float:          right;
+		font-weight:    600;
+		font-size:      60px;
+		line-height:    80px;
+		width:          800px;
+		z-index:        5;
+		animation: 2s forwards;
+		animation-name: slidein;
 	}
 
 	p{
@@ -170,6 +181,90 @@ body, html {
 		padding: 0;
 	}
 }
+
+
+
+.myskills{
+
+  // overflow: hidden;
+
+  &__container{
+	  max-width: 100%;
+      margin-top: 100px;
+	  margin-bottom: 100px;
+	  padding:0;
+	   overflow:hidden;
+  }
+
+  &__wrap{
+	  width: 100%;
+	  display: flex;
+	  -webkit-animation: 16s repeatedslide linear infinite;
+	  animation: 16s repeatedslide linear infinite;
+	  &_op{
+		 -webkit-animation: 16s repeatedslideop linear infinite;
+		 animation: 16s repeatedslideop linear infinite;
+	  }
+
+	  &:hover{
+		  -webkit-animation-play-state: paused;
+		  animation-play-state: paused;
+	  }
+
+	  span {
+		  font-size: 80px;
+		  line-height: 105px;
+		  font-weight: 800;
+		  margin: 0 32px;
+
+		  @supports (-webkit-text-stroke: 1px black) {
+		      -webkit-text-stroke: 1px black;
+		      -webkit-text-fill-color: white;
+		  }
+
+	  }
+  }
+}
+
+@-webkit-keyframes repeatedslide {
+  to {
+    margin-left: -100%;
+    margin-right: 100%;
+	// transform: translateX(100%);
+	// transform: translateX(-100%);
+
+  }
+}
+
+@keyframes repeatedslide {
+  to {
+    margin-left: -100%;
+    margin-right: 100%;
+	// transform: translateX(100%);
+	// transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes repeatedslideop {
+  to {
+    margin-left: 100%;
+    margin-right: -100%;
+	// transform: translateX(100%);
+	// transform: translateX(-100%);
+
+  }
+}
+
+@keyframes repeatedslideop {
+  to {
+    margin-left: 100%;
+    margin-right: -100%;
+	// transform: translateX(100%);
+	// transform: translateX(-100%);
+  }
+}
+
+
 
 
 @keyframes slidein {
