@@ -458,39 +458,19 @@ html {
   padding: 0;
   overflow: hidden;
 }
-.myskills__wrap {
+.myskills .slideshow {
   width: 100%;
-  display: flex;
-  animation: 16s repeatedslide linear infinite;
 }
-.myskills__wrap_op {
-  animation: 16s repeatedslideop linear infinite;
-}
-.myskills__wrap:hover {
-  animation-play-state: paused;
-}
-.myskills__wrap span {
+.myskills .slide {
   font-size: 80px;
   line-height: 105px;
   font-weight: 800;
   margin: 0 32px;
 }
 @supports (-webkit-text-stroke: 1px black) {
-  .myskills__wrap span {
+  .myskills .slide {
     -webkit-text-stroke: 1px black;
     -webkit-text-fill-color: white;
-  }
-}
-@keyframes repeatedslide {
-  to {
-    margin-left: -100%;
-    margin-right: 100%;
-  }
-}
-@keyframes repeatedslideop {
-  to {
-    margin-left: 100%;
-    margin-right: -100%;
   }
 }
 @keyframes slidein {

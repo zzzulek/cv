@@ -5,9 +5,9 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.0/paper-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>
 <body>
         <div class="header container header__container">
@@ -15,7 +15,7 @@
             <div class="header__nav">
                 <a href="#about" class="header__item">About</a>
                 <a href="#skills" class="header__item">Skills</a>
-                <a href="#projects" class="header__item">Projetcs</a>
+                <a href="#projects" class="header__item">Projects</a>
                 <a href="#contacts" class="header__item">Contacts</a>
             </div>
             <button class="header__toggle">Open menu</button>
@@ -45,33 +45,52 @@
             </svg>
         </div> -->
         <div id="skills" class="myskills container myskills__container">
-            <div class="myskills myskills__wrap">
-                <span>PHP</span>
-                <span>Java</span>
-                <span>JavaScript</span>
-                <span>jQuery</span>
-                <span>Laravel</span>
-                <span>Less</span>
+            <div class="slideshow js-slideshow">
+                <span class="slide">PHP</span>
+                <span class="slide">Java</span>
+                <span class="slide">JavaScript</span>
+                <span class="slide">jQuery</span>
+                <span class="slide">Laravel</span>
+                <span class="slide">Less</span>
             </div>
-            <div class="myskills myskills__wrap myskills__wrap_op">
-                <span>Node.js</span>
-                <span>Bootstrap</span>
-                <span>HTML</span>
-                <span>gulp</span>
-                <span>Git</span>
-                <span>npm</span>
+            <div class="slideshow js-slideshow">
+                <span class="slide">Node.js</span>
+                <span class="slide">Bootstrap</span>
+                <span class="slide">HTML</span>
+                <span class="slide">gulp</span>
+                <span class="slide">Git</span>
+                <span class="slide">npm</span>
             </div>
-            <div class="myskills myskills__wrap">
-                <span>Express.js</span>
-                <span>CSS</span>
-                <span>BEM</span>
-                <span>Figma</span>
-                <span>PL/SQL</span>
-                <span>MySQL</span>
-                <span>Sketch</span>
+            <div class="slideshow js-slideshow">
+                <span class="slide">Express.js</span>
+                <span class="slide">CSS</span>
+                <span class="slide">BEM</span>
+                <span class="slide">Figma</span>
+                <span class="slide">PL/SQL</span>
+                <span class="slide">MySQL</span>
+                <span class="slide">Sketch</span>
             </div>
         </div>
 
+        <div id="projects" class="myprojects container">
+            <div class="myprojects__project">
+                <div class="myprojects__image"></div>
+                <div class="myproject__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            </div>
+        </div>
+
+        <!-- <div class="slideshow js-slideshow">
+          <div class="slide">One</div>
+          <div class="slide">Two</div>
+          <div class="slide">Three</div>
+          <div class="slide">Four</div>
+          <div class="slide">Five</div>
+          <div class="slide">Six</div>
+          <div class="slide">Seven</div>
+          <div class="slide">Eight</div>
+          <div class="slide">Nine</div>
+          <div class="slide">Ten</div>
+        </div> -->
     <div class="cursor-dot-outline"></div>
     <div class="cursor-dot"></div>
     <script src="js/app.js"></script>
