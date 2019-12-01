@@ -10597,6 +10597,13 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+// document.onmousemove = function(e) {
+//   document.body.style.setProperty('--x',(e.clientX)+'px');
+//   document.body.style.setProperty('--y',(e.clientY)+'px');
+//
+// }
+
+
 
 //----------------------- cursor
 
@@ -10643,6 +10650,15 @@ var cursor = {
             el.addEventListener('mouseout', function() {
                 self.cursorEnlarged = false;
                 self.toggleCursorOnImage();
+            });
+        });
+
+        document.querySelectorAll('.header__nav').forEach(function(el){
+            el.addEventListener('mouseover', function(){
+                self.$outline.style.border = 'none';
+            });
+            el.addEventListener('mouseout', function(){
+                self.$outline.style.border = 'solid 1px #FF0000';
             });
         });
 
