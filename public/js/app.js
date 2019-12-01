@@ -10598,6 +10598,8 @@ return jQuery;
 } );
 
 
+//----------------------- cursor
+
 var cursor = {
     delay: 8,
     _x: 0,
@@ -10735,58 +10737,82 @@ cursor.init();
 
 
 
-// Play with this value to change the speed
-let tickerSpeed = 2;
+//---------------- carousel
 
-let flickity = null;
-let isPaused = false;
-const slideshowEl = document.querySelector('.js-slideshow');
+var slideshowEls = document.querySelectorAll('.js-slideshow');
 
-const update = () => {
-  if (isPaused) return;
-  if (flickity.slides) {
-    flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
-    flickity.selectedIndex = flickity.dragEndRestingSelect();
-    flickity.updateSelectedSlide();
-    flickity.settle(flickity.x);
-  }
-  window.requestAnimationFrame(update);
-};
+for ( var i=0; i < slideshowEls.length; i++ ) {
+    var carousel = slideshowEls[i];
+    if(i==1){
+        initCarouselContainer( carousel, true );
+    }else initCarouselContainer( carousel, false );
 
-const pause = () => {
-  isPaused = true;
-};
+}
 
-const play = () => {
-  if (isPaused) {
-    isPaused = false;
-    window.requestAnimationFrame(update);
-  }
-};
+function initCarouselContainer( carousel, direction ) {
 
-
-flickity = new Flickity(slideshowEl, {
-  autoPlay: false,
-  prevNextButtons: false,
-  pageDots: false,
-  draggable: true,
-  wrapAround: true,
-  selectedAttraction: 0.015,
-  friction: 0.25
-});
-flickity.x = 0;
-
-
-slideshowEl.addEventListener('mouseenter', pause, false);
-slideshowEl.addEventListener('focusin', pause, false);
-slideshowEl.addEventListener('mouseleave', play, false);
-slideshowEl.addEventListener('focusout', play, false);
-
-flickity.on('dragStart', () => {
-  isPaused = true;
-});
+    let tickerSpeed = 1;
+    let isPaused = false;
+    if(direction){
+        var flkty = new Flickity( carousel, {
+            autoPlay: false,
+            prevNextButtons: false,
+            pageDots: false,
+            draggable: true,
+            wrapAround: true,
+            selectedAttraction: 0.015,
+            friction: 0.25,
+            rightToLeft: true,
+        });
+    }else {
+        var flkty = new Flickity( carousel, {
+            autoPlay: false,
+            prevNextButtons: false,
+            pageDots: false,
+            draggable: true,
+            wrapAround: true,
+            selectedAttraction: 0.015,
+            friction: 0.25,
+            rightToLeft: false,
+        });
+    }
 
 
-update();
+    flkty.x = 0;
+
+    function update(){
+        if (isPaused) return;
+        if (flkty.slides) {
+            flkty.x = (flkty.x - tickerSpeed) % flkty.slideableWidth;
+            flkty.selectedIndex = flkty.dragEndRestingSelect();
+            flkty.updateSelectedSlide();
+            flkty.settle(flkty.x);
+        }
+        window.requestAnimationFrame(update);
+    };
+
+    const pause = () => {
+        isPaused = true;
+    };
+
+    const play = () => {
+        if (isPaused) {
+            isPaused = false;
+            window.requestAnimationFrame(update);
+        }
+    };
+
+
+    carousel.addEventListener('mouseenter', pause, false);
+    carousel.addEventListener('focusin', pause, false);
+    carousel.addEventListener('mouseleave', play, false);
+    carousel.addEventListener('focusout', play, false);
+
+    flkty.on('dragStart', () => {
+        isPaused = true;
+    });
+
+    update();
+}
 
 //# sourceMappingURL=app.js.map
