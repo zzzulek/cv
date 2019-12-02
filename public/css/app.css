@@ -501,18 +501,38 @@ html {
   margin-top: 120px;
 }
 .myprojects__project {
-  max-width: 550px;
+  max-width: calc(48%);
   margin-bottom: 50px;
 }
 .myprojects__descr {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 300px;
+}
+.myprojects__descr .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+}
+.myprojects__descr:hover .overlay {
+  opacity: 1;
+  transition: .5s ease;
 }
 .myprojects__descr span {
   font-size: 20px;
-  font-weight: normal;
-  color: grey;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 500;
+  padding: 50px;
+  box-sizing: border-box;
+  height: 100%;
+  text-align: center;
 }
 @keyframes slidein {
   0% {
