@@ -417,14 +417,14 @@ html {
 .iam {
   display: flex;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 120px;
 }
 .iam__image {
   display: block;
   width: 450px;
   height: 450px;
-  background-image: url("../img/photo_2019-08-05 16.22.25.jpeg");
-  filter: grayscale(100%);
+  background-image: url("../img/me.jpeg");
+  filter: grayscale(1%);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -444,17 +444,37 @@ html {
   line-height: 80px;
   width: 800px;
   z-index: 5;
-  animation: 2s forwards;
-  animation-name: slidein;
+  animation: 2s slidein forwards;
 }
 .iam p {
   margin: 0;
   padding: 0;
 }
+.experience {
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 30px;
+}
+.experience__container {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  margin-top: 120px;
+}
+.experience__item {
+  max-width: 350px;
+}
+.experience__title {
+  margin-top: 10px;
+  color: red;
+}
+.experience__year {
+  margin-top: 15px;
+  color: grey;
+}
 .myskills__container {
   max-width: 100%;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 120px;
   padding: 0;
   overflow: hidden;
 }
@@ -472,6 +492,27 @@ html {
     -webkit-text-stroke: 1px black;
     -webkit-text-fill-color: white;
   }
+}
+.myprojects {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 120px;
+}
+.myprojects__project {
+  max-width: 550px;
+  margin-bottom: 50px;
+}
+.myprojects__descr {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.myprojects__descr span {
+  font-size: 20px;
+  font-weight: normal;
+  color: grey;
 }
 @keyframes slidein {
   0% {
