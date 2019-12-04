@@ -5,6 +5,43 @@
 // }
 
 
+// Меню
+    var menu = $('.menu');
+
+    $('.header__toggle, .menu__close').click(function (event) {
+        event.preventDefault();
+
+        menu.toggleClass('menu_opened');
+    });
+
+    $(document).bind('keydown', function(event) {
+        if (event.which == 27) {
+            menu.removeClass('menu_opened');
+        }
+    });
+
+    $('.menu__item').click(function () {
+        menu.removeClass('menu_opened');
+    });
+
+    // Скролл до якоря
+    $("a[href*=\\#]:not([data-popup])").click(function(e) {
+        var href = $(e.target).attr('href');
+
+        if (href != '#') {
+
+            var url = $(e.target).attr('href');
+            var hash = url.substring(url.indexOf('#')+1);
+
+            if ($('#' + hash).length) {
+                $('html, body').animate({
+                    scrollTop: $('#' + hash).offset().top
+                }, 500);
+            }
+        }
+
+    });
+
 
 //----------------------- cursor
 
@@ -40,17 +77,6 @@ var cursor = {
             el.addEventListener('mouseout', function() {
                 self.cursorEnlarged = false;
                 self.toggleCursorSize();
-            });
-        });
-
-        document.querySelectorAll('.cursor_big').forEach(function(el) {
-            el.addEventListener('mouseover', function() {
-                self.cursorEnlarged = true;
-                self.toggleCursorOnImage();
-            });
-            el.addEventListener('mouseout', function() {
-                self.cursorEnlarged = false;
-                self.toggleCursorOnImage();
             });
         });
 
@@ -122,18 +148,6 @@ var cursor = {
         } else {
             self.$dot.style.transform = 'translate(-50%, -50%) scale(1)';
             self.$outline.style.border = 'solid 1px #FF0000';
-        }
-    },
-
-    toggleCursorOnImage: function() {
-        var self = this;
-
-        if (self.cursorEnlarged) {
-            self.$dot.style.height = '0px';
-            self.$outline.style.transform = 'translate(-50%, -50%) scale(2)';
-        } else {
-            self.$dot.style.height = '8px';
-            self.$outline.style.transform = 'translate(-50%, -50%) scale(1)';
         }
     },
 
@@ -230,4 +244,20 @@ function initCarouselContainer( carousel, direction ) {
     });
 
     update();
+}
+
+
+//------------- header
+
+$(function() {
+    toggleHeader();
+    $(window).on("scroll", toggleHeader);
+});
+
+function toggleHeader () {
+    if($(window).scrollTop() > 50) {
+        $(".header").addClass("active");
+    } else {
+       $(".header").removeClass("active");
+    }
 }
