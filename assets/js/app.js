@@ -26,6 +26,7 @@
 
     // Скролл до якоря
     $("a[href*=\\#]:not([data-popup])").click(function(e) {
+        e.preventDefault();
         var href = $(e.target).attr('href');
 
         if (href != '#') {
@@ -33,10 +34,13 @@
             var url = $(e.target).attr('href');
             var hash = url.substring(url.indexOf('#')+1);
 
+
             if ($('#' + hash).length) {
                 $('html, body').animate({
                     scrollTop: $('#' + hash).offset().top
-                }, 500);
+                }, 500, function () {
+                    window.location.hash = hash;
+                });
             }
         }
 
