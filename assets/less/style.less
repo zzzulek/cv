@@ -4,7 +4,7 @@
 
 
 * {
-	// cursor:  none;
+	cursor:  none;
 	margin:  0;
 	padding: 0;
 }
@@ -348,10 +348,6 @@ body, html {
 .myprojects {
 	position: relative;
 
-	// display:         flex;
-	// justify-content: space-between;
-	// align-items:     center;
-	// flex-wrap:       wrap;
 	padding-top: @padding-top;
 
 	&__project {
@@ -393,7 +389,6 @@ body, html {
 			text-align:      center;
 		}
 
-		// line-height: 60px;
 	}
 
 	.swiper-container {
@@ -441,11 +436,11 @@ body, html {
 .contact {
 
 	padding-top:    @padding-top;
-	padding-bottom: @padding-top;
+	padding-bottom: 50px;
 
 	&__items{
 		display:         flex;
-		justify-content: space-between;
+		justify-content: space-evenly;
 		align-items:     center;
 	}
 	&__item{
@@ -453,10 +448,24 @@ body, html {
 		color:           black;
 		font-size:       30px;
 		font-weight:     600;
-		line-height:     50px;
+		line-height:     35px;
+
+		&:hover{
+			color: red;
+		}
+
+	}
+	&__items-divider {
+		width:             1px;
+		height:            53px;
+		background-color:  red;
+		-webkit-transform: rotate(20deg);
+		-ms-transform:     rotate(20deg);
+		transform:         rotate(20deg);
 	}
 
 }
+
 
 	@keyframes slidein {
 		0% {
