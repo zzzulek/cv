@@ -1073,7 +1073,7 @@ html {
   color: grey;
 }
 .experience__cv {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 .experience__cv a {
   text-decoration: none;
@@ -1082,15 +1082,16 @@ html {
   color: #FF0000;
 }
 .experience__cv a:after {
-  width: 40px;
+  width: 15px;
+  margin-left: 15px;
+  pointer-events: none;
   height: 30px;
   content: '';
   background-image: url("../img/arrow_long.svg");
   display: inline-block;
   background-repeat: no-repeat;
-  background-size: contain;
   vertical-align: middle;
-  background-position: center;
+  background-position: center bottom;
   transform: rotate(-90deg);
 }
 .myskills__container {

@@ -314,24 +314,26 @@ body, html {
 		margin-top: 15px;
 		color:      grey;
 	}
-	&__cv{
-		margin-top: 40px;
+	&__cv {
+		margin-top: 50px;
+
 		a {
 			text-decoration: none;
 			display:         inline-block;
 			vertical-align:  top;
 			color:           @red;
-			&:after {
-				width:             40px;
-				height:            30px;
-				content:           '';
-				background-image:  url("../img/arrow_long.svg");
-				display:           inline-block;
-				background-repeat: no-repeat;
-				background-size:   contain;
-				vertical-align:    middle;
 
-				background-position: center;
+			&:after {
+				width:               15px;
+				margin-left:         15px;
+				pointer-events:      none;
+				height:              30px;
+				content:             '';
+				background-image:    url("../img/arrow_long.svg");
+				display:             inline-block;
+				background-repeat:   no-repeat;
+				vertical-align:      middle;
+				background-position: center bottom;
 				transform:           rotate(-90deg);
 			}
 		}
