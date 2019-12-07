@@ -808,6 +808,36 @@ button.swiper-pagination-bullet {
   -ms-perspective: 1200px;
 }
 
+@media (max-width: 320px + 50px) {
+  .media-test {
+    display: 'xs';
+  }
+}
+@media (max-width: 544px) {
+  .media-test {
+    display: 'mobile';
+  }
+}
+@media (max-width: 864px) {
+  .media-test {
+    display: 'tabletSmall';
+  }
+}
+@media (max-width: 1030px) {
+  .media-test {
+    display: 'tablet';
+  }
+}
+@media (max-width: 1233px) {
+  .media-test {
+    display: 'desktopSmall';
+  }
+}
+@media (max-width: 1643px) {
+  .media-test {
+    display: 'desktop';
+  }
+}
 * {
   cursor: none;
   margin: 0;
@@ -829,6 +859,13 @@ html {
   box-sizing: border-box;
   padding-left: 50px;
   padding-right: 50px;
+  padding-top: 150px;
+}
+@media (max-width: 1030px) {
+  .container {
+    padding: 0 50px;
+    padding-top: 100px;
+  }
 }
 .arrow {
   text-align: center;
@@ -905,6 +942,12 @@ html {
   transition: opacity .2s;
   background-position: right top;
 }
+@media (max-width: 1030px) {
+  .header__item {
+    font-size: 18px;
+    line-height: 45px;
+  }
+}
 .header__item:last-child {
   padding-right: 0;
 }
@@ -921,11 +964,13 @@ html {
   margin-right: 10px;
   content: '[';
   transform: translateX(20px);
+  color: blue;
 }
 .header__item::after {
   margin-left: 10px;
   content: ']';
   transform: translateX(-20px);
+  color: blue;
 }
 .header__item:hover::before,
 .header__item:hover::after,
@@ -933,6 +978,7 @@ html {
 .header__item:focus::after {
   opacity: 1;
   transform: translateX(0px);
+  color: blue;
 }
 .header__toggle {
   display: none;
@@ -1017,7 +1063,6 @@ html {
 .iam {
   display: flex;
   align-items: center;
-  padding-top: 150px;
 }
 .iam__image {
   display: block;
@@ -1029,10 +1074,6 @@ html {
   background-size: contain;
   background-position: center;
   margin-right: -50px;
-}
-.iam__image .cursor_big {
-  position: relative;
-  z-index: 10;
 }
 .iam__descr {
   position: relative;
@@ -1059,27 +1100,45 @@ html {
   display: flex;
   justify-content: space-between;
   text-align: left;
-  padding-top: 150px;
+}
+@media (max-width: 1030px) {
+  .experience__container {
+    flex-wrap: wrap;
+  }
 }
 .experience__item {
-  max-width: 350px;
+  max-width: calc(31.83%);
+}
+@media (max-width: 1030px) {
+  .experience__item {
+    max-width: calc(48.5%);
+  }
+  .experience__item:last-child {
+    margin-top: 30px;
+    max-width: 100%;
+  }
 }
 .experience__title {
   margin-top: 10px;
-  color: #FF0000;
+  color: blue;
 }
 .experience__year {
   margin-top: 15px;
   color: grey;
 }
+@media (max-width: 1030px) {
+  .experience__year {
+    margin-top: 10px;
+  }
+}
 .experience__cv {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 .experience__cv a {
   text-decoration: none;
   display: inline-block;
   vertical-align: top;
-  color: #FF0000;
+  color: blue;
 }
 .experience__cv a:after {
   width: 15px;
@@ -1096,7 +1155,6 @@ html {
 }
 .myskills__container {
   max-width: 100%;
-  padding-top: 150px;
   padding-left: 0;
   padding-right: 0;
   overflow: hidden;
@@ -1118,7 +1176,6 @@ html {
 }
 .myprojects {
   position: relative;
-  padding-top: 150px;
 }
 .myprojects__project {
   max-width: calc(49.2%);
@@ -1161,7 +1218,7 @@ html {
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
-  margin-top: 50px;
+  margin-top: 70px;
   background-size: 123px;
   background-position: 5px center;
   width: 38px;
@@ -1192,7 +1249,6 @@ html {
   left: auto;
 }
 .contact {
-  padding-top: 150px;
   padding-bottom: 50px;
 }
 .contact__items {
@@ -1212,7 +1268,7 @@ html {
   z-index: 1;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(90deg, #FF0000, #FF0000 50%, black 50%);
+  background-image: linear-gradient(90deg, blue, blue 50%, black 50%);
   background-size: 200% 100%;
   background-position: -100%;
   transition: all 0.3s ease-in-out;
@@ -1227,7 +1283,7 @@ html {
   bottom: -3px;
   z-index: 0;
   position: absolute;
-  background: #FF0000;
+  background: blue;
   transition: all 0.3s ease-in-out;
 }
 .contact__item:hover {
@@ -1239,7 +1295,7 @@ html {
 .contact__items-divider {
   width: 1px;
   height: 53px;
-  background-color: #FF0000;
+  background-color: blue;
   transform: rotate(20deg);
 }
 @keyframes slidein {
@@ -1266,13 +1322,13 @@ html {
   z-index: 100;
   width: 8px;
   height: 8px;
-  background-color: #FF0000;
+  background-color: blue;
 }
 .cursor-dot-outline {
   z-index: 100;
   width: 40px;
   height: 40px;
-  border: solid 1px #FF0000;
+  border: solid 1px red;
 }
 
 /*# sourceMappingURL=app.css.map */
