@@ -1,0 +1,37 @@
+@import "../core";
+
+.iam {
+
+	display:      flex;
+	align-items:  center;
+
+	&__image{
+		display:             block;
+		width:               450px;
+		height:              450px;
+		background-image:    url("../img/me.jpeg");
+		-webkit-filter:      grayscale(1%);
+		filter:              grayscale(1%);
+		background-repeat:   no-repeat;
+		background-size:     contain;
+		background-position: center;
+		margin-right:        -50px;
+	}
+	&__descr {
+		position:       relative;
+		top:            -100px;
+		pointer-events: none;
+		float:          right;
+		font-weight:    600;
+		font-size:      60px;
+		line-height:    80px;
+		width:          800px;
+		z-index:        5;
+		animation:      2s slidein forwards;
+	}
+
+	p{
+		margin:  0;
+		padding: 0;
+	}
+}

@@ -1,0 +1,68 @@
+@widthMin: 320px;
+
+@widthMobile:      320px;
+@widthTabletSmall: 768px;
+@widthTablet:      960px;
+@widthDesktop:     1100px;
+@widthWide:        1366px;
+@widthMax:         1920px;
+
+@breakpointXS:           @widthMobile + 50px;
+@breakpointMobile:       unit( ((unit(@widthTabletSmall) + unit(@widthMobile)) / 2), px );
+@breakpointTabletSmall:  unit( ((unit(@widthTablet) + unit(@widthTabletSmall)) / 2), px );
+@breakpointTablet:       unit( ((unit(@widthDesktop) + unit(@widthTablet)) / 2), px );
+@breakpointDesktopSmall: unit( ((unit(@widthWide) + unit(@widthDesktop)) / 2), px );
+@breakpointDesktop:      unit( ((unit(@widthMax) + unit(@widthWide)) / 2), px );
+
+.xs (@rules) {
+    @media (max-width: @breakpointXS) { @rules(); }
+}
+.mobile (@rules) {
+    @media (max-width: @breakpointMobile) { @rules(); }
+}
+.tabletSmall (@rules) {
+    @media (max-width: @breakpointTabletSmall) { @rules(); }
+}
+.tablet (@rules) {
+    @media (max-width: @breakpointTablet) { @rules(); }
+}
+.desktopSmall (@rules) {
+    @media (max-width: @breakpointDesktopSmall) { @rules(); }
+}
+.desktop (@rules) {
+    @media (max-width: @breakpointDesktop) { @rules(); }
+}
+
+.media-test {
+    .xs({display:           'xs';});
+    .mobile({display:       'mobile';});
+    .tabletSmall({display:  'tabletSmall';});
+    .tablet({display:       'tablet';});
+    .desktopSmall({display: 'desktopSmall';});
+    .desktop({display:      'desktop';});
+}
+
+.mobileBack (@rules) {
+    @media (min-width: @breakpointMobile) { @rules(); }
+}
+.tabletSmallBack (@rules) {
+    @media (min-width: @breakpointTabletSmall) { @rules(); }
+}
+.tabletBack (@rules) {
+    @media (min-width: @breakpointTablet) { @rules(); }
+}
+.desktopSmallBack (@rules) {
+    @media (min-width: @breakpointDesktopSmall) { @rules(); }
+}
+.desktopBack (@rules) {
+    @media (min-width: @breakpointDesktop) { @rules(); }
+}
+
+
+
+
+@padding-top:     150px;
+@padding-top-tab: 100px;
+
+// @red: #FF0000;
+@red: blue;

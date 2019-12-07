@@ -5,7 +5,8 @@ elixir(function(mix) {
     mix.less([
         './node_modules/normalize.less/normalize.less',
         './node_modules/swiper/dist/css/swiper.css',
-        './assets/less/style.less',
+        './assets/less/basics.less',
+        './assets/less/blocks/*.less',
         // './assets/less/core/*.less',
         // './assets/less/blocks/*.less',
 

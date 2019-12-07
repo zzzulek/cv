@@ -1,0 +1,125 @@
+@import "../core";
+
+.header {
+
+	position: fixed;
+	top:      -100px;
+	left:     0;
+	right:    0;
+	z-index:  10;
+
+	-webkit-user-select: none;
+	-moz-user-select:    none;
+	-ms-user-select:     none;
+	user-select:         none;
+
+	animation:      1s forwards;
+	animation-name: slidein;
+
+	&__container {
+		display:         flex;
+		justify-content: space-between;
+		align-items:     center;
+		padding-top:     15px;
+		padding-bottom:  15px;
+	}
+
+	&__nav {
+		display:         flex;
+		justify-content: space-between;
+		align-items:     center;
+		text-align: center;
+	}
+
+	&__logo {
+		display:          block;
+		width:            50px;
+		height:           50px;
+		font-size:        0;
+		text-decoration:  none;
+		background-image: url("../img/z.svg");
+
+		background-repeat:   no-repeat;
+		background-size:     contain;
+		background-position: center;
+
+	}
+
+	&__item {
+		display:             block;
+		font-size:           21px;
+		line-height:         50px;
+		padding-right:       35px;
+		text-decoration:     none;
+		color:               black;
+		margin-left:         15px;
+		transition:          opacity .2s;
+		background-position: right top;
+
+		.tablet({
+			font-size:       18px;
+			line-height:     45px;
+		});
+
+		&:last-child{
+			padding-right:   0;
+		}
+		&:hover {
+			opacity: 0.8;
+		}
+
+		&::before,
+		&::after {
+			display:            inline-block;
+			opacity:            0;
+			-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+			-moz-transition:    -moz-transform 0.3s, opacity 0.2s;
+			transition:         transform 0.3s, opacity 0.2s;
+		}
+
+		&::before {
+			margin-right:      10px;
+			content:           '[';
+			-webkit-transform: translateX(20px);
+			-moz-transform:    translateX(20px);
+			transform:         translateX(20px);
+			color:             @red;
+		}
+
+		&::after {
+			margin-left:       10px;
+			content:           ']';
+			-webkit-transform: translateX(-20px);
+			-moz-transform:    translateX(-20px);
+			transform:         translateX(-20px);
+			color:             @red;
+		}
+
+		&:hover::before,
+		&:hover::after,
+		&:focus::before,
+		&:focus::after {
+			opacity:           1;
+			-webkit-transform: translateX(0px);
+			-moz-transform:    translateX(0px);
+			transform:         translateX(0px);
+			color:             @red;
+		}
+	}
+
+	&__toggle {
+		display:          none;
+		width:            65px;
+		height:           25px;
+		font-size:        0;
+		border:           0;
+		background-color: transparent;
+		cursor:           pointer;
+		transition:       opacity .2s;
+		background-image: url("../img/icon__burger.svg");
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
