@@ -874,8 +874,8 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .header__nav {
   display: flex;
@@ -1066,11 +1066,32 @@ html {
 }
 .experience__title {
   margin-top: 10px;
-  color: red;
+  color: #FF0000;
 }
 .experience__year {
   margin-top: 15px;
   color: grey;
+}
+.experience__cv {
+  margin-top: 40px;
+}
+.experience__cv a {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: top;
+  color: #FF0000;
+}
+.experience__cv a:after {
+  width: 40px;
+  height: 30px;
+  content: '';
+  background-image: url("../img/arrow_long.svg");
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  background-position: center;
+  transform: rotate(-90deg);
 }
 .myskills__container {
   max-width: 100%;
@@ -1161,12 +1182,12 @@ html {
   background-position: -90px center;
 }
 .swiper-button-prev {
-  left: -10px;
+  left: 30px;
   right: auto;
   transform: rotate(180deg);
 }
 .swiper-button-next {
-  right: -10px;
+  right: 30px;
   left: auto;
 }
 .contact {
@@ -1190,7 +1211,7 @@ html {
   z-index: 1;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, red, red 50%, black 50%);
+  background-image: linear-gradient(90deg, #FF0000, #FF0000 50%, black 50%);
   background-size: 200% 100%;
   background-position: -100%;
   transition: all 0.3s ease-in-out;
@@ -1205,7 +1226,7 @@ html {
   bottom: -3px;
   z-index: 0;
   position: absolute;
-  background: red;
+  background: #FF0000;
   transition: all 0.3s ease-in-out;
 }
 .contact__item:hover {
@@ -1217,7 +1238,7 @@ html {
 .contact__items-divider {
   width: 1px;
   height: 53px;
-  background-color: red;
+  background-color: #FF0000;
   transform: rotate(20deg);
 }
 @keyframes slidein {
