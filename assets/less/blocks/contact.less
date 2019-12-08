@@ -26,12 +26,11 @@
 		background-size:         200% 100%;
 		background-position:     -100%;
 		transition:              all 0.3s ease-in-out;
-		background-size:         0;
 
-		&_github {background-image: url("../img/github.svg")}
-		&_linkedin {background-image: url("../img/linkedin.svg")}
-		&_freecodecamp {background-image: url("../img/fcc.svg")}
-		&_email {background-image: url("../img/email.svg")}
+		&_github       { .mobile({ background-image: url("../img/github.svg");   }); }
+		&_linkedin     { .mobile({ background-image: url("../img/linkedin.svg"); }); }
+		&_freecodecamp { .mobile({ background-image: url("../img/fcc.svg");      }); }
+		&_email        { .mobile({ background-image: url("../img/email.svg");    }); }
 
 		.tablet({
 			font-size:       24px;
@@ -50,8 +49,8 @@
 			background-position:     center;
 			background-repeat:       no-repeat;
 			font-size:               0;
-			width:                   20px;
-			height:                  20px;
+			width:                   40px;
+			height:                  40px;
 			display:                 inline-block;
 			vertical-align:          top;
 			-webkit-background-clip: border-box;
@@ -70,6 +69,10 @@
 			position:   absolute;
 			background: @color;
 			transition: all 0.3s ease-in-out;
+
+			.mobile({
+				display: none;
+			});
 		}
 
 		&:hover {
@@ -95,9 +98,12 @@
 		});
 
 		.tabletSmall({
-			height: 20px;
+			height: 30px;
 		});
 
+		.mobile({
+			height: 40px;
+		});
 	}
 
 }

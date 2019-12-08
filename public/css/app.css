@@ -1131,19 +1131,26 @@ html {
   background-size: 200% 100%;
   background-position: -100%;
   transition: all 0.3s ease-in-out;
-  background-size: 0;
 }
-.contact__item_github {
-  background-image: url("../img/github.svg");
+@media (max-width: 544px) {
+  .contact__item_github {
+    background-image: url("../img/github.svg");
+  }
 }
-.contact__item_linkedin {
-  background-image: url("../img/linkedin.svg");
+@media (max-width: 544px) {
+  .contact__item_linkedin {
+    background-image: url("../img/linkedin.svg");
+  }
 }
-.contact__item_freecodecamp {
-  background-image: url("../img/fcc.svg");
+@media (max-width: 544px) {
+  .contact__item_freecodecamp {
+    background-image: url("../img/fcc.svg");
+  }
 }
-.contact__item_email {
-  background-image: url("../img/email.svg");
+@media (max-width: 544px) {
+  .contact__item_email {
+    background-image: url("../img/email.svg");
+  }
 }
 @media (max-width: 1030px) {
   .contact__item {
@@ -1165,8 +1172,8 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     font-size: 0;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     vertical-align: top;
     -webkit-background-clip: border-box;
@@ -1185,6 +1192,11 @@ html {
   position: absolute;
   background: blue;
   transition: all 0.3s ease-in-out;
+}
+@media (max-width: 544px) {
+  .contact__item:before {
+    display: none;
+  }
 }
 .contact__item:hover {
   background-position: 0%;
@@ -1205,7 +1217,12 @@ html {
 }
 @media (max-width: 864px) {
   .contact__items-divider {
-    height: 20px;
+    height: 30px;
+  }
+}
+@media (max-width: 544px) {
+  .contact__items-divider {
+    height: 40px;
   }
 }
 
