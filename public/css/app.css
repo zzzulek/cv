@@ -879,8 +879,6 @@ html {
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
-  background-size: 123px;
-  background-position: 5px center;
   width: 38px;
   height: 38px;
   background-color: transparent;
@@ -900,12 +898,10 @@ html {
   background-position: -90px center;
 }
 .swiper-button-prev {
-  left: 30px;
   right: auto;
   transform: rotate(180deg);
 }
 .swiper-button-next {
-  right: 30px;
   left: auto;
 }
 .cursor-dot,
@@ -1003,7 +999,7 @@ html {
   height: 0;
   display: block;
   clear: both;
-  top: -100px;
+  top: -150px;
 }
 
 @media (max-width: 320px + 50px) {
@@ -1116,7 +1112,7 @@ html {
 }
 .contact__items {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   top: 0;
   height: 100%;
@@ -1135,6 +1131,47 @@ html {
   background-size: 200% 100%;
   background-position: -100%;
   transition: all 0.3s ease-in-out;
+  background-size: 0;
+}
+.contact__item_github {
+  background-image: url("../img/github.svg");
+}
+.contact__item_linkedin {
+  background-image: url("../img/linkedin.svg");
+}
+.contact__item_freecodecamp {
+  background-image: url("../img/fcc.svg");
+}
+.contact__item_email {
+  background-image: url("../img/email.svg");
+}
+@media (max-width: 1030px) {
+  .contact__item {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 40px;
+  }
+}
+@media (max-width: 864px) {
+  .contact__item {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+}
+@media (max-width: 544px) {
+  .contact__item {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 0;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: top;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: border-box;
+  }
 }
 .contact__item:before {
   display: block;
@@ -1160,6 +1197,16 @@ html {
   height: 53px;
   background-color: blue;
   transform: rotate(20deg);
+}
+@media (max-width: 1030px) {
+  .contact__items-divider {
+    height: 40px;
+  }
+}
+@media (max-width: 864px) {
+  .contact__items-divider {
+    height: 20px;
+  }
 }
 
 @media (max-width: 320px + 50px) {
@@ -1377,12 +1424,6 @@ html {
   margin-left: 15px;
   transition: opacity .2s;
   background-position: right top;
-}
-@media (max-width: 1030px) {
-  .header__item {
-    font-size: 18px;
-    line-height: 45px;
-  }
 }
 .header__item:last-child {
   padding-right: 0;
@@ -1622,7 +1663,7 @@ html {
   padding-top: 0;
 }
 .myprojects__project {
-  max-width: calc(49%);
+  width: 550px;
   margin-bottom: 50px;
 }
 .myprojects__descr {
@@ -1654,6 +1695,9 @@ html {
   box-sizing: border-box;
   height: 100%;
   text-align: center;
+}
+.myprojects .swiper-slide {
+  width: 550px;
 }
 .myprojects .swiper-container {
   width: 100%;

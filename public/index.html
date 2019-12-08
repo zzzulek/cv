@@ -123,7 +123,8 @@
         </div>
     </div>
 
-    <div id="projects" class="myprojects">
+    <div id="projects" class="anchor"></div>
+    <div class="myprojects">
         <div class="container myprojects__container">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
@@ -173,7 +174,7 @@
                 <div class="contact__items-divider"></div>
                 <a href="https://www.freecodecamp.org/zulfiya" class="contact__item contact__item_freecodecamp" target="_blank">FreeCodeCamp</a>
                 <div class="contact__items-divider"></div>
-                <a href="mailto:zulfiya.silko@gmail.com" class="contact__item">ZulfiyaSilko</a>
+                <a href="mailto:zulfiya.silko@gmail.com" class="contact__item contact__item_email">ZulfiyaSilko</a>
             </div>
         </div>
     </div>
@@ -202,9 +203,9 @@
 <script type="text/javascript">
     var swiper = new Swiper('.swiper-container', {
 
-        slidesPerView: 'auto',
+        slidesPerView: 2,
         // centeredSlides: true,
-        spaceBetween: 17,
+        spaceBetween: 40,
         loop: true,
         keyboard: true,
         navigation: {
@@ -212,10 +213,11 @@
             prevEl: '.swiper-button-prev',
         },
         breakpoints: {
-            640: {
-                spaceBetween: 10,
-            },
-        }
+        1040: {
+          slidesPerView: 1,
+          spaceBetween: 40,
+        },
+      }
 
     });
 </script>
