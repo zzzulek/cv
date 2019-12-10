@@ -9,6 +9,7 @@
   "author": "zulfiya",
   "license": "ISC",
   "dependencies": {
+    "@nebular/theme": "^4.6.0",
     "gulp": "^3.9.1",
     "jquery": "^3.4.1",
     "laravel-elixir": "^6.0.0-18",

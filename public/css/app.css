@@ -897,12 +897,28 @@ html {
 .swiper-button-prev:active {
   background-position: -90px center;
 }
+@media (max-width: 544px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
 .swiper-button-prev {
   right: auto;
   transform: rotate(180deg);
 }
+@media (max-width: 544px) {
+  .swiper-button-prev {
+    display: none;
+  }
+}
 .swiper-button-next {
   left: auto;
+}
+@media (max-width: 544px) {
+  .swiper-button-next {
+    display: none;
+  }
 }
 .cursor-dot,
 .cursor-dot-outline {
@@ -1117,6 +1133,11 @@ html {
   top: 0;
   height: 100%;
 }
+@media (max-width: 544px) {
+  .contact__items {
+    justify-content: space-evenly;
+  }
+}
 .contact__item {
   position: relative;
   text-decoration: none;
@@ -1222,7 +1243,7 @@ html {
 }
 @media (max-width: 544px) {
   .contact__items-divider {
-    height: 40px;
+    display: none;
   }
 }
 
@@ -1679,6 +1700,11 @@ html {
 .myprojects__container {
   padding-top: 0;
 }
+@media (max-width: 544px) {
+  .myprojects__container {
+    padding: 0;
+  }
+}
 .myprojects__project {
   width: 550px;
   margin-bottom: 50px;
@@ -1716,9 +1742,46 @@ html {
 .myprojects .swiper-slide {
   width: 550px;
 }
+@media (max-width: 544px) {
+  .myprojects .swiper-slide {
+    width: 100%;
+  }
+}
 .myprojects .swiper-container {
   width: 100%;
   height: 400px;
+}
+.myprojects__pagination {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: 0;
+  margin-top: 40px;
+  height: 2px !important;
+  width: calc(60%) !important;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FF0000;
+  opacity: 0;
+}
+@media (max-width: 544px) {
+  .myprojects__pagination {
+    opacity: 1;
+  }
+}
+.myprojects .swiper-pagination {
+  top: auto;
+  bottom: 0;
+  opacity: 0;
+}
+.myprojects .swiper-pagination .swiper-pagination-progressbar-fill {
+  background: #FF0000 !important;
+}
+@media (max-width: 544px) {
+  .myprojects .swiper-pagination {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 320px + 50px) {
