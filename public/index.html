@@ -19,6 +19,7 @@
     <meta name="theme-color" content="#ff0000">
 
     <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link href="../hamburgers-master/dist/hamburgers.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
@@ -27,7 +28,6 @@
 <body>
     <div class="menu">
         <div class="container menu__container">
-            <a href="#" class="menu__close">Закрыть</a>
             <div class="menu__space"></div>
             <div class="menu__nav">
                 <a href="#about" class="menu__item">About</a>
@@ -46,7 +46,11 @@
                 <a href="#projects" class="header__item">Projects</a>
                 <a href="#contacts" class="header__item">Contacts</a>
             </div>
-            <button class="header__toggle">Open menu</button>
+            <button class="header__toggle hamburger hamburger--collapse" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
         </div>
     </header>
     <div class="iam container">

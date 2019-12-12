@@ -8,20 +8,23 @@
 // Меню
     var menu = $('.menu');
 
-    $('.header__toggle, .menu__close').click(function (event) {
+    $('.header__toggle').click(function (event) {
         event.preventDefault();
 
         menu.toggleClass('menu_opened');
+        $('.header__toggle').toggleClass('is-active');
     });
 
     $(document).bind('keydown', function(event) {
         if (event.which == 27) {
             menu.removeClass('menu_opened');
+            $('.header__toggle').toggleClass('is-active');
         }
     });
 
     $('.menu__item').click(function () {
         menu.removeClass('menu_opened');
+        $('.header__toggle').toggleClass('is-active');
     });
 
     // Скролл до якоря

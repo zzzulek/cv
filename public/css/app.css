@@ -1459,6 +1459,11 @@ html {
   align-items: center;
   text-align: center;
 }
+@media (max-width: 864px) {
+  .header__nav {
+    display: none;
+  }
+}
 .header__logo {
   display: block;
   width: 50px;
@@ -1491,9 +1496,6 @@ html {
 .header__item:last-child {
   padding-right: 0;
 }
-.header__item:hover {
-  opacity: 0.8;
-}
 .header__item::before,
 .header__item::after {
   display: inline-block;
@@ -1522,17 +1524,26 @@ html {
 }
 .header__toggle {
   display: none;
-  width: 65px;
-  height: 25px;
-  font-size: 0;
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
-  transition: opacity .2s;
-  background-image: url("../img/icon__burger.svg");
 }
-.header__toggle:hover {
-  opacity: 0.8;
+@media (max-width: 864px) {
+  .header__toggle {
+    display: block;
+  }
+}
+.header .hamburger {
+  display: none;
+}
+@media (max-width: 864px) {
+  .header .hamburger {
+    display: block;
+  }
+}
+.header .hamburger-inner {
+  background-color: red;
+}
+.header .hamburger.is-active .hamburger-inner,
+.header .hamburger.is-active .hamburger-inner::after {
+  background-color: red;
 }
 
 @media (max-width: 320px + 50px) {
@@ -1692,34 +1703,45 @@ html {
   max-height: 140px;
   flex-grow: 1;
 }
-.menu__close {
-  font-size: 0;
-  text-decoration: none;
-  margin-top: 11px;
-  display: block;
-  width: 59px;
-  height: 37px;
-  flex-shrink: 0;
-  margin-left: auto;
-  margin-right: auto;
-  background-image: url("../img/icon__close.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
 .menu__nav {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 .menu__item {
   display: inline-block;
   margin-bottom: 30px;
-  padding-right: 40px;
   font-size: 35px;
   font-weight: 400;
   line-height: 35px;
   text-decoration: none;
+  color: black;
+}
+.menu__item::before,
+.menu__item::after {
+  display: inline-block;
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.2s;
+}
+.menu__item::before {
+  margin-right: 10px;
+  content: '[';
+  transform: translateX(20px);
+  color: blue;
+}
+.menu__item::after {
+  margin-left: 10px;
+  content: ']';
+  transform: translateX(-20px);
+  color: blue;
+}
+.menu__item:hover::before,
+.menu__item:hover::after,
+.menu__item:focus::before,
+.menu__item:focus::after {
+  opacity: 1;
+  transform: translateX(0px);
+  color: blue;
 }
 
 @media (max-width: 320px + 50px) {
