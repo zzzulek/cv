@@ -904,21 +904,7 @@ html {
   }
 }
 .swiper-button-prev {
-  right: auto;
   transform: rotate(180deg);
-}
-@media (max-width: 544px) {
-  .swiper-button-prev {
-    display: none;
-  }
-}
-.swiper-button-next {
-  left: auto;
-}
-@media (max-width: 544px) {
-  .swiper-button-next {
-    display: none;
-  }
 }
 .cursor-dot,
 .cursor-dot-outline {
