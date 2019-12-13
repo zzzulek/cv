@@ -47,6 +47,11 @@
 		background-size:     contain;
 		background-position: center;
 
+		.mobile({
+			width:  40px;
+			height: 40px;
+		});
+
 	}
 
 	&__item {
@@ -122,6 +127,12 @@
 
 		.tabletSmall({
 			display: block;
+		});
+	}
+
+	.hamburger-box {
+		.mobile({
+			transform: scale(.8);
 		});
 	}
 

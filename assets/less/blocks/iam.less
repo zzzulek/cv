@@ -6,7 +6,7 @@
 	align-items:  center;
 
 	.mobile({
-		// display: block;
+		padding-top: 100px;
 	});
 
 	&__image{
@@ -20,6 +20,12 @@
 		background-size:     contain;
 		background-position: center;
 		margin-right:        -50px;
+
+		.tabletSmall({
+			width:  350px;
+			height: 350px;
+			margin-right: -40px;
+		});
 
 		.mobile({
 			width:  200px;
@@ -49,7 +55,7 @@
 		.tabletSmall({
 			font-weight:    600;
 			font-size:      40px;
-			line-height:    60px;
+			line-height:    45px;
 			width:          400px;
 		});
 

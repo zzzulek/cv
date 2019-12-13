@@ -1475,6 +1475,12 @@ html {
   background-size: contain;
   background-position: center;
 }
+@media (max-width: 544px) {
+  .header__logo {
+    width: 40px;
+    height: 40px;
+  }
+}
 .header__item {
   display: block;
   font-size: 21px;
@@ -1538,6 +1544,11 @@ html {
     display: block;
   }
 }
+@media (max-width: 544px) {
+  .header .hamburger-box {
+    transform: scale(0.8);
+  }
+}
 .header .hamburger-inner {
   background-color: red;
 }
@@ -1581,6 +1592,9 @@ html {
   align-items: center;
 }
 @media (max-width: 544px) {
+  .iam {
+    padding-top: 100px;
+  }
 }
 .iam__image {
   display: block;
@@ -1592,6 +1606,13 @@ html {
   background-size: contain;
   background-position: center;
   margin-right: -50px;
+}
+@media (max-width: 864px) {
+  .iam__image {
+    width: 350px;
+    height: 350px;
+    margin-right: -40px;
+  }
 }
 @media (max-width: 544px) {
   .iam__image {
@@ -1624,7 +1645,7 @@ html {
   .iam__descr {
     font-weight: 600;
     font-size: 40px;
-    line-height: 60px;
+    line-height: 45px;
     width: 400px;
   }
 }
