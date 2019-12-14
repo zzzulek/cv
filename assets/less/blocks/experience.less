@@ -7,6 +7,7 @@
 	line-height: 30px;
 
 	.container {
+		padding-top: 70px;
 
 		.mobile({
 			padding-top: 50px;
@@ -23,11 +24,17 @@
 		});
 	}
 
+	&__statement {
+		padding-bottom: 30px;
+		text-align:     justify;
+	}
+
 	&__item {
 		max-width: calc(33.33% - 1.5px);
+
 		.tablet({
 			max-width: calc(50% - 1.5px);
-			&:last-child{
+			&:last-child {
 				margin-top: 30px;
 				max-width:  100%;
 			}
@@ -37,6 +44,15 @@
 			margin-top: 30px;
 			max-width: 100%;
 		});
+
+		a {
+  		  text-decoration: none;
+		  color: blue;
+		}
+
+		a:hover {
+			color: red;
+		}
 	}
 
 	&__title {

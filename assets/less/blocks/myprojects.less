@@ -14,8 +14,34 @@
 
 	&__project {
 
-		width:     550px;
+		width:         550px;
 		margin-bottom: 50px;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	&__title {
+		font-size:      20px;
+		color:          @color;
+		text-transform: uppercase;
+		font-weight:    normal;
+		overflow:       hidden;
+
+		&:before{
+			width:               20px;
+			margin-right:        50px;
+			pointer-events:      none;
+			height:              85px;
+			content:             '';
+			background-image:    url("../img/arrow_long.svg");
+			display:             inline-block;
+			background-repeat:   no-repeat;
+			vertical-align:      middle;
+			background-position: center;
+			transform:           rotate(-90deg);
+		}
 	}
 
 	&__descr {
@@ -25,13 +51,16 @@
 		height:              400px;
 
 		.overlay{
-			background: rgba(0, 0, 0, 0.5);
-			color:      #f1f1f1;
-			width:      100%;
-			transition: .5s ease;
-			opacity:    0;
-			color:      white;
-			font-size:  20px;
+			background:      rgba(0, 0, 0, 0.8);
+			color:           #f1f1f1;
+			width:           100%;
+			transition:      .5s ease;
+			opacity:         0;
+			color:           white;
+			font-size:       20px;
+			display:         flex;
+			flex-direction:  column;
+			justify-content: space-evenly;
 		}
 
 		&:hover .overlay {
@@ -40,15 +69,33 @@
 		}
 
 		span {
-			font-size:       20px;
+			font-size:       18px;
+			line-height:     25px;
 			display:         flex;
 			justify-content: center;
 			flex-direction:  column;
-			font-weight:     500;
-			padding:         50px;
+			font-weight:     normal;
+			padding:         20px 60px;
 			box-sizing:      border-box;
 			height:          100%;
-			text-align:      center;
+			text-align:      left;
+		}
+
+		&_details {
+			display:     flex;
+			align-items: flex-start;
+			margin:      10px 0;
+
+			p {
+				&:first-child {
+					min-width: 150px;
+				}
+				&:last-child {
+					min-width:   250px;
+					margin-left: 30px;
+					min-height:  130px;
+				}
+			}
 		}
 
 	}
