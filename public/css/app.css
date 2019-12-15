@@ -1552,6 +1552,7 @@ html {
 }
 .header .hamburger {
   display: none;
+  outline: none;
 }
 @media (max-width: 864px) {
   .header .hamburger {
