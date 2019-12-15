@@ -1849,7 +1849,13 @@ html {
 }
 @media (max-width: 544px) {
   .myprojects__title {
-    font-size: 18px;
+    font-size: 15px;
+  }
+  .myprojects__title::before {
+    height: 50px;
+    background-position: bottom;
+    margin-right: 20px;
+    width: 16px;
   }
 }
 .myprojects__descr {
@@ -1882,6 +1888,12 @@ html {
   box-sizing: border-box;
   height: 100%;
   text-align: left;
+}
+@media (max-width: 544px) {
+  .myprojects__descr span {
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 .myprojects .swiper-slide {
   width: 550px;
